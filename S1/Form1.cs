@@ -16,7 +16,7 @@ namespace $safeprojectname$
             InitializeComponent();
         }
 
-        int hak = 0, sayi_tahmin, randomsayi; 
+        int hak = 0, tahmin_sayi, randomsayi; 
         private void Form1_Load(object sender, EventArgs e) 
         {
             Random rnd = new Random(); 
@@ -29,26 +29,26 @@ namespace $safeprojectname$
             {
                 if (hak < 10) 
                 {
-                    sayi_tahmin = int.Parse(textBox1.Text); 
-                    if (sayi_tahmin < randomsayi) 
+                    tahmin_sayi = int.Parse(textBox1.Text); 
+                    if (tahmin_sayi < randomsayi) 
                     {
-                        listBox1.Items.Add(sayi_tahmin); 
+                        listBox1.Items.Add(tahmin_sayi); 
                         textBox1.Text = ""; 
                         hak++; 
                         label2.Text = "Girdiğiniz sayı tahmini sayıdan küçük.";
                     }
-                    else if (sayi_tahmin > randomsayi)
+                    else if (tahmin_sayi > randomsayi)
                     {
-                        listBox1.Items.Add(sayi_tahmin); 
+                        listBox1.Items.Add(tahmin_sayi); 
                         textBox1.Text = ""; 
                         hak++; 
-                        label2.Text = "Girdiğiniz sayı tahmini sayıdan büyük."; 
+                        label2.Text = "Girdiğiniz sayı tahmin sayıdan büyük."; 
                     }
-                    else if (sayi_tahmin == randomsayi) 
-                        MessageBox.Show("Helal be Koçum! Doğru sayıyı bularak oyunu başarıyla tamamladınız.", "Tebrikler!"); 
+                    else if (tahmin_sayi == randomsayi) 
+                        MessageBox.Show("Doğru sayıyı buldunuz.", "Tebrikler!"); 
                 }
                 else
-                    MessageBox.Show("Kaybettiniz!", "Maalesef 10 hakkınızın tamamını kullandınız.");
+                    MessageBox.Show("Hakkınız bitti", "Maalesef 10 hakkınızın tamamını kullandınız.");
             }
             else if (textBox1.Text == "") 
             {
